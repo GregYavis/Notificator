@@ -1,2 +1,3 @@
 #!/bin/bash
-bash /data/data/com.termux/files/home/notif/venv/bin/python3 main.py
+enterpreter=find -name python3 -print -quit
+$enterpreter main.py
