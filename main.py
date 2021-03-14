@@ -15,8 +15,11 @@ class ShulzHopperRequester:
         page = requests.get(self.url)
         page.encoding = 'utf-8'
         soup = BeautifulSoup(page.text, 'lxml')
-        ls = (soup.find(id='buy_button_link')).text
-        os.system(f"./termux_notification.bash '{ls}'")
+        text_on_page = (soup.find(id='buy_button_link')).text
+        if text_on_page == "НЕТ В НАЛИЧИИ":
+            os.system(f"./termux_notification.bash 'Велосипеда Shulz Hopper 3 нет в наличии'")
+        else:
+            os.system(f"./termux_notification.bash 'Статус изменился на:{text_on_page.capitalize()}'")
 
 if __name__ == '__main__':
     notifayer = ShulzHopperRequester()
