@@ -21,6 +21,8 @@ class ShulzHopperRequester:
         else:
             os.system(f"./termux_notification.bash 'Статус изменился на:{text_on_page.capitalize()}'")
 
+
+
 if __name__ == '__main__':
     notifayer = ShulzHopperRequester()
     notifayer.run_parser()
