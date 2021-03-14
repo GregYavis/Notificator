@@ -16,7 +16,7 @@ class ShulzHopperRequester:
         page.encoding = 'utf-8'
         soup = BeautifulSoup(page.text, 'lxml')
         ls = (soup.find(id='buy_button_link')).text
-        os.system(f"./termux_notification.bash '{ls}'")
+        os.system(f"./notif/termux_notification.bash '{ls}'")
 
 if __name__ == '__main__':
     notifayer = ShulzHopperRequester()
